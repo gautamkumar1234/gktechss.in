@@ -1,5 +1,5 @@
 // =============================================================================
-//  GK Tech Software Solution — Dual Submit (Email + Sheet)
+//  GK Tech Software Solution — Static Site JS
 // =============================================================================
 
 const WEB3FORMS_KEY = 'ffad0bff-8c0a-4cbe-a50d-c2a113650377';
@@ -112,6 +112,16 @@ const statusEl = document.getElementById('form-status');
 const btn      = document.getElementById('submit-btn');
 const btnLabel = document.getElementById('btn-label');
 
+const serviceMap = {
+  'ai':       'Artificial Intelligence',
+  'web':      'Web Design & Development',
+  'social':   'Social Media Marketing',
+  'cloud':    'Cloud Storage',
+  'software': 'Software Development',
+  'app':      'App Development',
+  'other':    'Not sure yet'
+};
+
 if (form) {
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -121,10 +131,17 @@ if (form) {
       return el ? (el.value || '').trim() : '';
     };
 
-    const name    = getVal('inp-name');
-    const email   = getVal('inp-email');
-    const phone   = getVal('inp-phone');
-    const service = getVal('inp-service') || getVal('inp-role') || 'General Inquiry';
+    const name  = getVal('inp-name');
+    const email = getVal('inp-email');
+    const phone = getVal('inp-phone');
+
+    const serviceEl   = document.getElementById('inp-service') || document.getElementById('inp-role');
+    const rawVal      = serviceEl ? serviceEl.value.trim() : '';
+    const selectedText = serviceEl && serviceEl.options && serviceEl.selectedIndex >= 0
+      ? serviceEl.options[serviceEl.selectedIndex].text.trim()
+      : rawVal;
+    
+    const service = serviceMap[rawVal] || selectedText || rawVal || 'General Inquiry';
     const message = getVal('inp-message');
 
     if (!name) {
@@ -149,7 +166,12 @@ if (form) {
           access_key: WEB3FORMS_KEY,
           subject: `New Lead: ${name} (${service})`,
           from_name: 'GK Tech Website',
-          name, email, phone, service, message, botcheck: ''
+          name,
+          email,
+          phone,
+          service,
+          message,
+          botcheck: ''
         })
       });
 
@@ -169,7 +191,6 @@ if (form) {
         body: sheetParams.toString()
       });
 
-      // Run both together
       const [w3Res] = await Promise.all([w3Req, sheetReq.catch(() => {})]);
       const w3Data = await w3Res.json();
 
