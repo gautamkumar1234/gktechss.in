@@ -1,602 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>GK Tech software Solutions</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GK Tech Software Solution — AI, Web, App &amp; SAP Services</title>
+  <meta name="description" content="GK Tech Software Solution builds AI-powered software, web platforms, mobile apps, cloud solutions and SAP support for growing businesses.">
+  <meta property="og:title"       content="GK Tech Software Solution">
+  <meta property="og:description" content="AI, Web, App &amp; SAP Services — one team, end to end.">
+  <meta property="og:type"        content="website">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Tailwind CSS CDN -->
+  <script>
+    // Suppress Tailwind Play CDN production warning
+    const _warn = console.warn;
+    console.warn = function (...a) {
+      if (a[0] && typeof a[0] === 'string' && a[0].includes('cdn.tailwindcss.com')) return;
+      _warn.apply(console, a);
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body class="antialiased">
 
-<body>
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner"
-            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
+<!-- ── Scroll Progress Bar ────────────────────────────────────────────────── -->
+<div id="progress" role="progressbar" aria-hidden="true"></div>
 
+<!-- ══════════════════════════════════════════════════════════════════════════
+     NAV
+     ══════════════════════════════════════════════════════════════════════════ -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 glass">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0">GK Tech</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <!--it for navbar all hyperlinks-->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto py-0">
-                        <a href="#home" class="nav-item nav-link ">Home</a>
-                        <a href="#service" class="nav-item nav-link">Service</a>
-                        <a href="#ourteam" class="nav-item nav-link">Our Team</a>
-                        <a href="#contactus" class="nav-item nav-link">Contact Us</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
-                    </div>
-                    <!--it for navbar all hyperlinks end-->
-                </div>
-            </nav>
-            <!-- navbar end-->
+    <!-- Logo -->
+    <a href="#top" class="flex items-center gap-2.5 py-1" aria-label="GK Tech Software Solution — Home">
+      <img
+        src="assets/images/logo.png"
+        alt="GK Tech Software Solutions"
+        class="logo-enhance h-9 sm:h-10 w-auto object-contain">
+    </a>
 
-            <!-- start about the company & Photos-->
-            <div id="home" class="container-xxl bg-primary hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5 align-items-end m-0">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated slideInDown">A company based on cloud stroge & App
-                                Development</h1>
-                            <p class="text-white pb-3 animated slideInDown">Cloud and App often work together, as
-                                cloud computing can host and
-                                deliver applications, making them accessible from any device with an internet
-                                connection. This synergy has transformed the way businesses and
-                                individuals use technology, providing greater flexibility, scalability, and
-                                accessibility to a wide range of software solutions.</p>
-                            <a href=""
-                                class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read
-                                More</a>
-                            <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
-                                Us</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar & Hero End -->
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8" role="navigation" aria-label="Main navigation">
+      <a href="#top"         class="nav-link" data-section="top">Home</a>
+      <a href="#services"    class="nav-link" data-section="services">Services</a>
+      <a href="#about"       class="nav-link" data-section="about">About</a>
+      <a href="#team"        class="nav-link" data-section="team">Our Team</a>
+      <a href="#contact"     class="nav-link" data-section="contact">Contact</a>
+    </nav>
 
+    <div class="flex items-center gap-4">
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 btn-primary text-white text-sm font-medium px-5 py-2.5 rounded-full">
+        Get a Quote
+      </a>
+      <!-- Hamburger -->
+      <button
+        id="menu-btn"
+        class="md:hidden flex flex-col gap-[5px] p-2"
+        aria-label="Open menu"
+        aria-expanded="false"
+        onclick="toggleMenu()">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+    </div>
+  </div>
 
-        <!-- Feature Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    <div class="col-lg-4 wow fadeInUp " data-wow-delay="0.1s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                            <h5 class="mb-3">Digital Marketing</h5>
-                            <p class="m-0">A well-designed and user-friendly website is the
-                                foundation of digital marketing. Platforms like Facebook, Instagram,
-                                Twitter and Youtube.Creating valuable, relevant, and consistent
-                                content (blogs, videos, animation) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                            <h5 class="mb-3">Googole Ads</h5>
-                            <p class="m-0"> Google Ads allows advertisers to bid on specific
-                                keywords related to their products or services.Advertisers can set
-                                daily budgets to control spending. Google Ads supports various ad formats,
-                                including text ads, display ads, video ads, shopping ads, and app promotion ads. </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                            <h5 class="mb-3">Design & Development</h5>
-                            <p class="m-0">Design visual elements of a product, including layout,
-                                colors, typography. make sure that we doing best for designing.
-                                Develop the design concepts and turn them into functional
-                                products by writing code in languages like HTML, CSS, JavaScript,
-                                and various programming languages.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Feature End -->
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu md:hidden" role="navigation" aria-label="Mobile navigation">
+    <nav class="flex flex-col px-6 pb-6 pt-2 gap-1">
+      <a href="#top"      class="mobile-link" onclick="closeMenu()">🏠 Home</a>
+      <a href="#services" class="mobile-link" onclick="closeMenu()">⚡ Services</a>
+      <a href="#about"    class="mobile-link" onclick="closeMenu()">ℹ️ About</a>
+      <a href="#team"     class="mobile-link" onclick="closeMenu()">👥 Our Team</a>
+      <a href="#contact"  class="mobile-link" onclick="closeMenu()">📩 Contact Us</a>
+      <a href="#contact"  class="btn-primary text-white text-center font-medium px-5 py-3 rounded-full mt-4" onclick="closeMenu()">
+        Get a Quote
+      </a>
+    </nav>
+  </div>
+</header>
 
+<!-- ══════════════════════════════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section id="top" class="grad-hero pt-40 pb-20 px-6 lg:px-10">
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
 
-        <!-- About Start -->
-        <div id="about" class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <p class="section-title text-secondary">About Us<span></span></p>
-                        <h1 class="mb-5">#1 GK Tech software solution with Grow employees experience</h1>
-                        <p class="mb-4">Gk Tech provides the service of mobile & desktops application, cloud service,
-                            we develop the softwares, worko on Google ads, Social media marketing,GK Tech Software
-                            Solution
-                            and exploring new opportunities to enhance our [mention the relevant aspect, e.g.,
-                            Artificial
-                            intelligents, Robotics, software systems, etc.] in the future. </p>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Digital Marketing</p>
-                                <p class="mb-2">85%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Google Ads</p>
-                                <p class="mb-2">75%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="75"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill mb-4">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Design & Development</p>
-                                <p class="mb-2">95%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a> -->
-                    </div>
-                    <div class="col-lg-6">
-                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
+  <div class="max-w-5xl mx-auto text-center relative">
+    <span class="eyebrow">GK Tech Software Solution</span>
 
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mt-6 leading-tight" style="color:var(--ink);">
+      We build <span class="grad-text">software</span> that<br class="hidden sm:block">
+      actually runs your business.
+    </h1>
 
+    <p class="mt-6 max-w-2xl mx-auto text-lg leading-relaxed" style="color:var(--muted);">
+      From <span id="rotator" class="font-semibold" style="color:var(--brand);">AI-powered apps</span>
+      to web platforms, mobile apps, and cloud infrastructure — one team, end to end,
+      with support that doesn't disappear after launch.
+    </p>
 
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a href="#contact" class="btn-primary text-white font-medium px-7 py-3.5 rounded-full">
+        Start a project
+      </a>
+      <a href="#services" class="border font-medium px-7 py-3.5 rounded-full transition hover:border-purple-600" style="border-color:var(--line);">
+        Explore services
+      </a>
+    </div>
+  </div>
+</section>
 
+<!-- ══════════════════════════════════════════════════════════════════════════
+     TECH MARQUEE
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="marquee-wrap py-6 overflow-hidden border-y" style="border-color:var(--line);" aria-label="Technologies we use">
+  <div class="marquee-track font-mono text-sm" style="color:var(--muted);">
+    <span>Python</span><span>·</span><span>React &amp; React Native</span><span>·</span>
+    <span>Flutter</span><span>·</span><span>Java &amp; Kotlin</span><span>·</span>
+    <span>C# &amp; C++</span><span>·</span><span>SAP MM / SD / FICO</span><span>·</span>
+    <span>WordPress</span><span>·</span><span>Cloud Infra</span><span>·</span>
+    <span>MongoDB</span><span>·</span><span>Node.js</span><span>·</span>
+    <!-- duplicate for seamless loop -->
+    <span>Python</span><span>·</span><span>React &amp; React Native</span><span>·</span>
+    <span>Flutter</span><span>·</span><span>Java &amp; Kotlin</span><span>·</span>
+    <span>C# &amp; C++</span><span>·</span><span>SAP MM / SD / FICO</span><span>·</span>
+    <span>WordPress</span><span>·</span><span>Cloud Infra</span><span>·</span>
+    <span>MongoDB</span><span>·</span><span>Node.js</span><span>·</span>
+  </div>
+</section>
 
-        <!-- Service Start -->
-        <div id="service" class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our
-                        Services<span></span></p>
-                    <h1 class="text-center mb-5">What Solutions We Provide</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-brain fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Artificial intelligents</h5>
-                            <p class="m-0"> Integrating AI and ML capabilities into software and mobile applications
-                                to enable data-driven decision-making, data science, deep lerning and automation
-                                using with python or reatjs programming language.</p>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SERVICES
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section id="services" class="px-6 lg:px-10 py-24">
+  <div class="max-w-7xl mx-auto">
 
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-laptop-code fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Web Design</h5>
-                            <p class="m-0"> Ensuring that websites adapt and display correctly on various devices and
-                                screen sizes, providing a seamless user experience on desktops, tablets,
-                                and smartphones. Platforms like WordPress, Html, css, JavaScript.</p>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fab fa-facebook-f fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Social Media Marketing</h5>
-                            <p class="m-0">Crafting engaging and relevant content, including
-                                posts, images, videos, and stories, tailored to the preferences
-                                of the target audience.Social media platforms (e.g., Facebook,
-                                Instagram, Twitter, LinkedIn, TikTok) </p>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-cloud fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Cloud Storage</h5>
-                            <p class="m-0">Leading cloud providers offer high availability and redundancy,
-                                ensuring, connect the data center then retrive your data and connet the
-                                mobile or laptop application</p>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-code fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Software Development</h5>
-                            <p class="m-0"> Software development is an iterative process that involves
-                                multiple stages, including planning, designing, coding, testing, and
-                                deployment. we are develop as per requeirment of Clients using with
-                                C#, C++, python, java. </p>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fab fa-android fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">App Development</h5>
-                            <p class="m-0">Creating mobile applications for iOS and Android devices,
-                                often using frameworks like React Native or Flutter, java, kotlin, xml
-                                and using IDE frameworks
-                                like Android studio and vscode.</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
-
-        <!-- Projects Start -->
-
-        <!-- <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span></p>
-                    <h1 class="text-center mb-5">Recently Completed Projects</h1>
-                </div>
-                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="col-12 text-center">
-                        <ul class="list-inline mb-5" id="portfolio-flters">
-                            <li class="mx-2 active" data-filter="*">All</li>
-                            <li class="mx-2" data-filter=".first">Web Design</li>
-                            <li class="mx-2" data-filter=".second">Graphic Design</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row g-4 portfolio-container">
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                                </div>
-                            </div>
-                            <div class="bg-light p-4">
-                                <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                                <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Projects End -->
-
-
-
-
-        <!-- Testimonial Start -->
-
-        <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
-                <h1 class="text-center mb-5">What Say Our Clients!</h1>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 65px; height: 65px;">
-                            <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Testimonial End -->
-
-
-        <!-- Team Start -->
-        <div id="ourteam" class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our Team<span></span>
-                    </p>
-                    <h1 class="text-center mb-5">Our Team Members</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/kbu.jpg" alt="">
-                                <h5>Khushbu</h5>
-                                <span>M.D, CEO & Founder</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>-->
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-square mx-1" href="tel:+918130810984"><i class="fa fa-phone-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/Gautam.png" alt="">
-                                <h5>Gautam Khanna</h5>
-                                <span>CTO</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                              <!--<a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-square mx-1" href="tel:+917906080976"><i class="fa fa-phone-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/team-1.jpg" alt="">
-                                <h5>Manish Gupta</h5>
-                                <span>CA Expert</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/Ajeet Singh.jpeg" alt="">
-                                <h5>Ajeet Singh</h5>
-                                <span>Advocate & Legal advisor</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-
-        <!-- Footer Start -->
-        <div id="contactus" class="container-fluid bg-primarytext-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                        <p class="maerker-1"><a
-                                href="https://www.google.com/maps/place/Khanna+Residency/@29.8781775,77.5260472,17z/data=!3m1!4b1!4m6!3m5!1s0x390e95c7d9702a3f:0x7283d15036c0023c!8m2!3d29.8781775!4d77.5260472!16s%2Fg%2F11qpk5nvrz?authuser=0&entry=ttu"><i
-                                    class="fa fa-map-marker-alt me-3"></i></a> Khanna residency vill Landhora Guzur,
-                            nearby highway delhi road,
-                            <City->Saharanpur</City->
-                        </p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+91- 7906080976</p>
-                        
-                        <p class="maerker-1"><i class="fa fa-envelope me-3"></i>kapilkumarkh@gmail.com</p>
-                        <!-- <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div> -->
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                        <a class="btn btn-link" href="#about">About Us</a>
-                        <a class="btn btn-link" href="#contactus">Contact Us</a>
-                        <a class="btn btn-link" href="parivacy.html">Privacy Policy</a>
-                        <a class="btn btn-link" href="T&C.html">Terms & Condition</a>
-                        <!-- <a class="btn btn-link" href="">Career</a> -->
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
-                        <p>Hi there! Greeting form GK Tech Software solution that we are best beacuse we are doing best
-                            performance & User friendly experience.</p>
-                        <div class="position-relative w-100 mt-3">
-                            <!-- <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container px-lg-5">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">GK Tech software solution</a>, All Right Reserved.
-
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-4" style="color:var(--ink);">
+        What Solutions We Provide
+      </h2>
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid">
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+      <!-- AI (wide bento) -->
+      <div class="card bento-lg reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="6" y="6" width="12" height="12" rx="2"/>
+              <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold mt-5" style="color:var(--ink);">Artificial Intelligence</h3>
+          <p class="text-sm leading-relaxed mt-3 max-w-md" style="color:var(--muted);">
+            We integrate AI and ML into your software and mobile apps for data-driven decisions —
+            built with Python and React, from data science to full automation.
+          </p>
+        </div>
+        <span class="font-mono text-xs mt-6" style="color:var(--brand);">Python · ML · Automation</span>
+      </div>
+
+      <!-- Web Design -->
+      <div class="card card-tint reveal rounded-2xl p-7">
+        <div class="icon-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 4v4"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold mt-5" style="color:var(--ink);">Web Design &amp; Development</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">
+          Responsive websites across every device — built on WordPress, HTML, CSS, and JavaScript.
+        </p>
+      </div>
+
+      <!-- Cloud -->
+      <div class="card reveal rounded-2xl p-7">
+        <div class="icon-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M7 18a4 4 0 1 1 .7-7.94A5 5 0 0 1 17 9a4 4 0 0 1 0 8H7z"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold mt-5" style="color:var(--ink);">Cloud Storage</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">
+          High-availability infrastructure with redundancy — data stays connected across mobile and web.
+        </p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="card reveal rounded-2xl p-7">
+        <div class="icon-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <path d="M8.6 10.5l6.8-3.9M8.6 13.5l6.8 3.9"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold mt-5" style="color:var(--ink);">Social Media Marketing</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">
+          Engaging content tailored to your audience across Facebook, Instagram, X, LinkedIn, and TikTok.
+        </p>
+      </div>
+
+      <!-- Software Dev -->
+      <div class="card card-tint reveal rounded-2xl p-7">
+        <div class="icon-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold mt-5" style="color:var(--ink);">Software Development</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">
+          Planning to deployment, built to your requirements in C#, C++, Python, or Java.
+        </p>
+      </div>
+
+      <!-- App Dev (wide bento) -->
+      <div class="card bento-lg reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold mt-5" style="color:var(--ink);">App Development</h3>
+          <p class="text-sm leading-relaxed mt-3 max-w-md" style="color:var(--muted);">
+            Mobile apps for iOS and Android using React Native, Flutter, Java, or Kotlin —
+            developed in Android Studio and VS Code, shipped to the app stores.
+          </p>
+        </div>
+        <span class="font-mono text-xs mt-6" style="color:var(--brand);">iOS · Android · Flutter · React Native</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     STATS
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="px-6 lg:px-10 py-16 border-y" style="border-color:var(--line);" aria-label="Company statistics">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
+    <div>
+      <div class="font-display text-4xl font-bold" style="color:var(--brand);">
+        <span class="counter" data-target="50">0</span>+
+      </div>
+      <div class="text-xs font-mono mt-2" style="color:var(--muted);">Projects delivered</div>
+    </div>
+    <div>
+      <div class="font-display text-4xl font-bold" style="color:var(--brand);">
+        <span class="counter" data-target="6">0</span>
+      </div>
+      <div class="text-xs font-mono mt-2" style="color:var(--muted);">Service lines</div>
+    </div>
+    <div>
+      <div class="font-display text-4xl font-bold" style="color:var(--brand);">
+        <span class="counter" data-target="24">0</span>/7
+      </div>
+      <div class="text-xs font-mono mt-2" style="color:var(--muted);">SAP support coverage</div>
+    </div>
+    <div>
+      <div class="font-display text-4xl font-bold" style="color:var(--brand);">
+        <span class="counter" data-target="100">0</span>%
+      </div>
+      <div class="text-xs font-mono mt-2" style="color:var(--muted);">In-house delivery</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ABOUT
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section id="about" class="px-6 lg:px-10 py-24" style="background:var(--tint);">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <span class="eyebrow">About Us</span>
+    <h2 class="font-display text-3xl sm:text-4xl font-bold mt-4" style="color:var(--ink);">
+      Greetings from GK Tech Software Solution
+    </h2>
+    <p class="mt-6 text-lg leading-relaxed" style="color:var(--muted);">
+      We're a software company that believes performance and user experience aren't optional extras —
+      they're the job. Our team plans, builds, and supports AI, web, mobile, and cloud solutions
+      under one roof, so you're not juggling five vendors for one product.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     WHY CHOOSE US
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section id="why-us" class="px-6 lg:px-10 py-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">Why GK Tech</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-4" style="color:var(--ink);">Why Clients Choose Us</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal" id="why-grid">
+
+      <div class="why-card rounded-2xl p-7 text-center">
+        <div class="why-icon" aria-hidden="true">🚀</div>
+        <h3 class="font-display font-semibold mt-4 text-lg" style="color:var(--ink);">Fast Delivery</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">We follow agile sprints — MVPs delivered in weeks, not months.</p>
+      </div>
+
+      <div class="why-card rounded-2xl p-7 text-center">
+        <div class="why-icon" aria-hidden="true">🔒</div>
+        <h3 class="font-display font-semibold mt-4 text-lg" style="color:var(--ink);">Secure &amp; Scalable</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">Industry-grade security practices and architecture that grows with your business.</p>
+      </div>
+
+      <div class="why-card rounded-2xl p-7 text-center">
+        <div class="why-icon" aria-hidden="true">🛠️</div>
+        <h3 class="font-display font-semibold mt-4 text-lg" style="color:var(--ink);">End-to-End Support</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">We stay with you post-launch — maintenance, updates, and 24/7 SAP support.</p>
+      </div>
+
+      <div class="why-card rounded-2xl p-7 text-center">
+        <div class="why-icon" aria-hidden="true">💰</div>
+        <h3 class="font-display font-semibold mt-4 text-lg" style="color:var(--ink);">Transparent Pricing</h3>
+        <p class="text-sm leading-relaxed mt-3" style="color:var(--muted);">No hidden costs. Fixed-price or hourly — you decide what suits your budget.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     TEAM
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section id="team" class="px-6 lg:px-10 py-24" style="background:var(--tint);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">Our Team</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-4" style="color:var(--ink);">Meet Our Team</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal" id="team-grid">
+
+      <!-- Khushbu -->
+      <div class="card rounded-2xl p-7 text-center">
+        <div class="avatar-wrap">
+          <img src="assets/images/khushbu.jpg" alt="Khushbu — MD, CEO &amp; Founder" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-display font-semibold mt-4" style="color:var(--brand);">Khushbu</h3>
+        <p class="text-sm mt-1" style="color:var(--muted);">MD, CEO &amp; Founder</p>
+        <div class="mt-5 pt-5 border-t flex items-center justify-center gap-4" style="border-color:var(--line);">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
+          </a>
+          <a href="tel:+918130810984" aria-label="Call Khushbu" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3l3 3-1.5 1.5a12 12 0 0 0 4 4L22 10l3 3-2 3a3 3 0 0 1-3 1 18 18 0 0 1-14-14 3 3 0 0 1 1-3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gautam Khanna -->
+      <div class="card rounded-2xl p-7 text-center">
+        <div class="avatar-wrap">
+          <img src="assets/images/gautam.png" alt="Gautam Khanna — CTO" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-display font-semibold mt-4" style="color:var(--brand);">Gautam Khanna</h3>
+        <p class="text-sm mt-1" style="color:var(--muted);">CTO</p>
+        <div class="mt-5 pt-5 border-t flex items-center justify-center gap-4" style="border-color:var(--line);">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
+          </a>
+          <a href="tel:+917906080976" aria-label="Call Gautam" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3l3 3-1.5 1.5a12 12 0 0 0 4 4L22 10l3 3-2 3a3 3 0 0 1-3 1 18 18 0 0 1-14-14 3 3 0 0 1 1-3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Manish Gupta -->
+      <div class="card rounded-2xl p-7 text-center">
+        <div class="avatar-wrap">
+          <img src="assets/images/manish.jpg" alt="Manish Gupta — CA Expert" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-display font-semibold mt-4" style="color:var(--brand);">Manish Gupta</h3>
+        <p class="text-sm mt-1" style="color:var(--muted);">CA Expert</p>
+        <div class="mt-5 pt-5 border-t flex items-center justify-center gap-4" style="border-color:var(--line);">
+          <a href="#" aria-label="Facebook" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ajeet Singh -->
+      <div class="card rounded-2xl p-7 text-center">
+        <div class="avatar-wrap">
+          <img src="assets/images/ajeet.jpeg" alt="Ajeet Singh — Advocate &amp; Legal Advisor" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-display font-semibold mt-4" style="color:var(--brand);">Ajeet Singh</h3>
+        <p class="text-sm mt-1" style="color:var(--muted);">Advocate &amp; Legal Advisor</p>
+        <div class="mt-5 pt-5 border-t flex items-center justify-center gap-4" style="border-color:var(--line);">
+          <a href="#" aria-label="Facebook" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     TESTIMONIALS
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="px-6 lg:px-10 py-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-4" style="color:var(--ink);">What Our Clients Say</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+
+      <div class="card rounded-2xl p-7">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+          "GK Tech delivered our e-commerce platform in just 3 weeks. The AI product recommendation
+          feature increased our sales by 40%. Highly recommend their team!"
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="testi-avatar" aria-hidden="true">RK</div>
+          <div>
+            <div class="font-display font-semibold text-sm" style="color:var(--ink);">Rajesh Kumar</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">CEO, ShopEasy Pvt. Ltd.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-tint rounded-2xl p-7">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+          "The SAP FICO implementation was flawless. Their team understood our business needs from day one
+          and their 24/7 support has been a lifesaver during month-end closings."
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="testi-avatar" aria-hidden="true">PS</div>
+          <div>
+            <div class="font-display font-semibold text-sm" style="color:var(--ink);">Priya Sharma</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">CFO, TechManufacture Ltd.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card rounded-2xl p-7">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+          "Our mobile app went from concept to App Store in 6 weeks. The React Native app runs perfectly
+          on both iOS and Android. GK Tech is our go-to dev partner."
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="testi-avatar" aria-hidden="true">AM</div>
+          <div>
+            <div class="font-display font-semibold text-sm" style="color:var(--ink);">Arjun Mehta</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">Founder, FitTrack App</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     CONTACT
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section id="contact" class="px-6 lg:px-10 py-24" style="background:var(--tint);">
+  <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+    <span class="eyebrow">Contact Us</span>
+    <h2 class="font-display text-3xl sm:text-4xl font-bold mt-4" style="color:var(--ink);">Tell us what you're building</h2>
+    <p class="mt-3" style="color:var(--muted);">
+      This goes straight into our project queue — we reply within one business day.
+    </p>
+  </div>
+
+  <form id="lead-form" class="max-w-xl mx-auto card reveal rounded-2xl p-8 space-y-5" novalidate aria-label="Contact form">
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div>
+        <label for="inp-name" class="block text-xs font-mono mb-2" style="color:var(--muted);">Full name *</label>
+        <input
+          id="inp-name" name="name" type="text" required
+          placeholder="Your name"
+          class="w-full rounded-lg px-4 py-2.5 text-sm">
+      </div>
+      <div>
+        <label for="inp-email" class="block text-xs font-mono mb-2" style="color:var(--muted);">Email *</label>
+        <input
+          id="inp-email" name="email" type="email" required
+          placeholder="you@company.com"
+          class="w-full rounded-lg px-4 py-2.5 text-sm">
+      </div>
+    </div>
+
+    <div>
+      <label for="inp-phone" class="block text-xs font-mono mb-2" style="color:var(--muted);">Phone</label>
+      <input
+        id="inp-phone" name="phone" type="tel"
+        placeholder="+91"
+        class="w-full rounded-lg px-4 py-2.5 text-sm">
+    </div>
+
+    <div>
+      <label for="inp-service" class="block text-xs font-mono mb-2" style="color:var(--muted);">What do you need?</label>
+      <select id="inp-service" name="service" class="w-full rounded-lg px-4 py-2.5 text-sm">
+        <option value="ai">Artificial Intelligence</option>
+        <option value="web">Web Design &amp; Development</option>
+        <option value="social">Social Media Marketing</option>
+        <option value="cloud">Cloud Storage</option>
+        <option value="software">Software Development</option>
+        <option value="app">App Development</option>
+        <option value="other">Not sure yet</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="inp-message" class="block text-xs font-mono mb-2" style="color:var(--muted);">Project details</label>
+      <textarea
+        id="inp-message" name="message" rows="4"
+        placeholder="Tell us a bit about the project..."
+        class="w-full rounded-lg px-4 py-2.5 text-sm"></textarea>
+    </div>
+
+    <button type="submit" id="submit-btn" class="w-full btn-primary text-white font-medium py-3 rounded-lg">
+      <span id="btn-label">Send request →</span>
+    </button>
+    <p id="form-status" class="text-xs text-center font-mono min-h-[1rem]" aria-live="polite"></p>
+  </form>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════════════════════ -->
+<footer class="px-6 lg:px-10 pt-16 pb-8" style="background:var(--ink); color:white;">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Brand -->
+    <div>
+      <div class="mb-4">
+        <div class="bg-white/95 px-3.5 py-2 rounded-xl inline-block shadow-lg">
+          <img src="assets/images/logo.png" alt="GK Tech Software Solutions" class="logo-enhance h-8 sm:h-9 w-auto object-contain">
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mt-4" style="color:rgba(255,255,255,0.6);">
+        Hi there! Greetings from GK Tech Software Solution — we focus on best performance
+        and a user-friendly experience.
+      </p>
+      <div class="flex gap-4 mt-6">
+        <a id="footer-fb"       href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"  class="footer-social">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg>
+        </a>
+        <a id="footer-insta"    href="https://www.instagram.com/gktechss.io/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a id="footer-linkedin" href="https://www.linkedin.com/company/gk-tech-software-solution/" target="_blank" rel="noopener" aria-label="LinkedIn"  class="footer-social">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-wide mb-4" style="color:rgba(255,255,255,0.5);">Quick Links</h4>
+      <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.7);">
+        <li><a href="#top"         class="footer-link">Home</a></li>
+        <li><a href="#services"    class="footer-link">Services</a></li>
+        <li><a href="#about"       class="footer-link">About</a></li>
+        <li><a href="#team"        class="footer-link">Our Team</a></li>
+        <li><a href="#contact"     class="footer-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-wide mb-4" style="color:rgba(255,255,255,0.5);">Services</h4>
+      <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.7);">
+        <li><a href="#services" class="footer-link">Artificial Intelligence</a></li>
+        <li><a href="#services" class="footer-link">Web Development</a></li>
+        <li><a href="#services" class="footer-link">App Development</a></li>
+        <li><a href="#services" class="footer-link">SAP Solutions</a></li>
+        <li><a href="#services" class="footer-link">Cloud &amp; Infra</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-wide mb-4" style="color:rgba(255,255,255,0.5);">Contact</h4>
+      <ul class="space-y-3 text-sm" style="color:rgba(255,255,255,0.7);">
+        <li class="flex gap-2">
+          <span aria-hidden="true">📍</span>
+          <span id="footer-address">Khanna Residency, Vill. Landhora, Guzur, near Highway Delhi Road, Saharanpur</span>
+        </li>
+        <li class="flex gap-2">
+          <span aria-hidden="true">📞</span>
+          <a id="footer-phone" href="tel:+917906080976" class="hover:text-white transition">+91-7906080976</a>
+        </li>
+        <li class="flex gap-2">
+          <span aria-hidden="true">✉️</span>
+          <a id="footer-email" href="mailto:sapb1.gktechss@gmail.com" class="hover:text-white transition">sapb1.gktechss@gmail.com</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Google Map -->
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t" style="border-color:rgba(255,255,255,0.1);">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+      <div class="flex items-center gap-2">
+        <span aria-hidden="true">📍</span>
+        <h4 class="font-display font-semibold text-sm">Our Location — Saharanpur, UP</h4>
+      </div>
+      <a
+        href="https://maps.google.com/?q=Saharanpur+Delhi+Road"
+        target="_blank" rel="noopener"
+        class="text-xs font-mono hover:underline flex items-center gap-1"
+        style="color:var(--cyan);">
+        Open in Google Maps ↗
+      </a>
+    </div>
+    <div class="w-full h-52 rounded-2xl overflow-hidden shadow-2xl relative" style="border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05);">
+      <iframe
+        title="GK Tech Office Location — Saharanpur"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55263.149952528775!2d77.51860824902344!3d29.967520699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eea567848f029%3A0xe543df54f15d7e10!2sSaharanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+        width="100%" height="100%"
+        style="border:0; filter:contrast(1.15) opacity(0.85) invert(0.9) hue-rotate(180deg);"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="max-w-7xl mx-auto mt-12 pt-6 border-t flex flex-wrap items-center justify-between gap-4 text-xs font-mono"
+       style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.4);">
+    <span>© <span id="year"></span> GK Tech Software Solution. All rights reserved.</span>
+    <span>Built with ❤️ in India</span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     FLOATING BUTTONS
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- WhatsApp -->
+<a
+  id="whatsapp-btn"
+  href="https://wa.me/917906080976?text=Hi%20GK%20Tech%2C%20I%20am%20interested%20in%20your%20services."
+  target="_blank" rel="noopener"
+  aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- Scroll to Top -->
+<button
+  id="scroll-top"
+  onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
 </body>
-
 </html>
