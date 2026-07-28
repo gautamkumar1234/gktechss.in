@@ -5,11 +5,9 @@
 const WEB3FORMS_KEY = 'ffad0bff-8c0a-4cbe-a50d-c2a113650377';
 const GSHEET_URL    = 'https://script.google.com/macros/s/AKfycbwXmX4r4v732AwViBuwtFLHWoOlqkvwLtGwQOW1xGL4LceEkq-hl6gOmMCsiStu__o/exec';
 
-// 1. Year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// 2. Scroll Progress & Navigation
 const progress     = document.getElementById('progress');
 const nav          = document.getElementById('nav');
 const scrollTopBtn = document.getElementById('scroll-top');
@@ -39,7 +37,6 @@ function updateActiveNav() {
 }
 updateActiveNav();
 
-// 3. Mobile Menu
 const menuBtn    = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -60,7 +57,6 @@ document.addEventListener('click', e => {
   if (nav && !nav.contains(e.target)) closeMenu();
 });
 
-// 4. Rotating Headline Word
 const words   = ['AI-powered apps', 'web platforms', 'mobile apps', 'SAP support', 'cloud infrastructure'];
 let wi        = 0;
 const rotator = document.getElementById('rotator');
@@ -75,7 +71,6 @@ if (rotator) {
   }, 2400);
 }
 
-// 5. Scroll Animations
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length) {
   const io = new IntersectionObserver(entries => {
@@ -111,7 +106,6 @@ if (counters.length) {
   counters.forEach(el => cio.observe(el));
 }
 
-// 6. CONTACT FORM SUBMIT (Using Exact 5 IDs)
 const form     = document.getElementById('lead-form');
 const statusEl = document.getElementById('form-status');
 const btn      = document.getElementById('submit-btn');
@@ -121,12 +115,16 @@ if (form) {
   form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    // Exact 5 IDs matching your form:
-    const name    = (document.getElementById('inp-name')?.value || '').trim();
-    const email   = (document.getElementById('inp-email')?.value || '').trim();
-    const phone   = (document.getElementById('inp-phone')?.value || '').trim();
-    const service = (document.getElementById('inp-service')?.value || document.getElementById('inp-role')?.value || '').trim();
-    const message = (document.getElementById('inp-message')?.value || '').trim();
+    const getVal = (id) => {
+      const el = document.getElementById(id);
+      return el ? (el.value || '').trim() : '';
+    };
+
+    const name    = getVal('inp-name');
+    const email   = getVal('inp-email');
+    const phone   = getVal('inp-phone');
+    const service = getVal('inp-service') || getVal('inp-role') || 'General Inquiry';
+    const message = getVal('inp-message');
 
     if (!name) {
       showStatus('⚠ Please enter your name.', 'error');
@@ -144,7 +142,7 @@ if (form) {
     const payload = { name, email, phone, service, message };
 
     try {
-      // Send Email via Web3Forms
+      // 1. Send Email via Web3Forms
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -162,13 +160,20 @@ if (form) {
       });
       const data = await res.json();
 
-      // Log in Google Sheet
+      // 2. Send to Google Sheets via URLSearchParams
       if (GSHEET_URL) {
+        const sheetData = new URLSearchParams();
+        sheetData.append('timestamp', new Date().toLocaleString());
+        sheetData.append('name', name);
+        sheetData.append('email', email);
+        sheetData.append('phone', phone);
+        sheetData.append('service', service);
+        sheetData.append('message', message);
+
         fetch(GSHEET_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...payload, timestamp: new Date().toISOString() }),
+          body: sheetData,
         }).catch(() => {});
       }
 
