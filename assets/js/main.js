@@ -1,5 +1,5 @@
 // =============================================================================
-//  GK Tech Software Solution — Static Site JS
+//  GK Tech Software Solution — Dual Submit (Email + Sheet)
 // =============================================================================
 
 const WEB3FORMS_KEY = 'ffad0bff-8c0a-4cbe-a50d-c2a113650377';
@@ -106,6 +106,7 @@ if (counters.length) {
   counters.forEach(el => cio.observe(el));
 }
 
+// ── FORM SUBMISSION ──────────────────────────────────────────────────────────
 const form     = document.getElementById('lead-form');
 const statusEl = document.getElementById('form-status');
 const btn      = document.getElementById('submit-btn');
@@ -139,49 +140,44 @@ if (form) {
     if (btnLabel) btnLabel.textContent = 'Sending... ⏳';
     if (statusEl) statusEl.textContent = '';
 
-    const payload = { name, email, phone, service, message };
-
     try {
-      // 1. Send Email via Web3Forms
-      const res = await fetch('https://api.web3forms.com/submit', {
+      // 1. Web3Forms (Email)
+      const w3Req = fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New Lead from ${name} (${service})`,
+          subject: `New Lead: ${name} (${service})`,
           from_name: 'GK Tech Website',
-          name,
-          email,
-          phone,
-          service,
-          message,
-          botcheck: ''
-        }),
+          name, email, phone, service, message, botcheck: ''
+        })
       });
-      const data = await res.json();
 
-      // 2. Send to Google Sheets via URLSearchParams
-      if (GSHEET_URL) {
-        const sheetData = new URLSearchParams();
-        sheetData.append('timestamp', new Date().toLocaleString());
-        sheetData.append('name', name);
-        sheetData.append('email', email);
-        sheetData.append('phone', phone);
-        sheetData.append('service', service);
-        sheetData.append('message', message);
+      // 2. Google Sheets
+      const sheetParams = new URLSearchParams();
+      sheetParams.append('timestamp', new Date().toLocaleString());
+      sheetParams.append('name', name);
+      sheetParams.append('email', email);
+      sheetParams.append('phone', phone);
+      sheetParams.append('service', service);
+      sheetParams.append('message', message);
 
-        fetch(GSHEET_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: sheetData,
-        }).catch(() => {});
-      }
+      const sheetReq = fetch(GSHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: sheetParams.toString()
+      });
 
-      if (data.success) {
+      // Run both together
+      const [w3Res] = await Promise.all([w3Req, sheetReq.catch(() => {})]);
+      const w3Data = await w3Res.json();
+
+      if (w3Data.success) {
         showStatus('✅ Request sent! We will reply within one business day.', 'success');
         form.reset();
       } else {
-        showStatus('⚠ ' + (data.message || 'Something went wrong.'), 'error');
+        showStatus('⚠ ' + (w3Data.message || 'Something went wrong.'), 'error');
       }
     } catch (err) {
       showStatus('⚠ Network error. Please email sapb1.gktechss@gmail.com directly.', 'error');
