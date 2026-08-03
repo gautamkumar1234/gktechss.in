@@ -1,0 +1,64 @@
+/* ============================================================
+   GK Tech — home.css
+   Styles specific to index.html (home page) ONLY
+   ============================================================ */
+
+/* ── Rotator (hero typing effect) ─────────────────────────── */
+#rotator {
+  display: inline-block;
+  min-width: 1px;
+  border-bottom: 2px solid var(--cyan);
+  transition: opacity .25s ease;
+}
+
+/* ── Tech Marquee / Ticker ─────────────────────────────────── */
+.marquee-track {
+  display: flex; gap: 3.5rem; width: max-content;
+  animation: scroll-x 28s linear infinite;
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Team Avatars ──────────────────────────────────────────── */
+.avatar-wrap {
+  width: 88px; height: 88px; border-radius: 9999px;
+  margin: 0 auto; overflow: hidden;
+  box-shadow: 0 10px 24px -8px rgba(109,40,217,0.4);
+}
+.avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Fallback initials avatar */
+.avatar {
+  width: 100%; height: 100%; border-radius: 9999px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+  font-size: 22px; color: white;
+  background: linear-gradient(135deg, var(--brand), var(--cyan));
+}
+
+/* ── Team Social Icons ─────────────────────────────────────── */
+.social-icon {
+  color: var(--muted);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 8px;
+  transition: color .2s, background .2s, transform .2s, box-shadow .2s;
+}
+.social-icon:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #e91e8c, #ff6ab0);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -4px rgba(233,30,140,0.5);
+}
+
+/* ── Testimonials ──────────────────────────────────────────── */
+.stars { color: var(--amber); font-size: 16px; letter-spacing: 2px; }
+.testi-avatar {
+  width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--brand), var(--cyan));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  font-size: 14px; color: white;
+}

@@ -1,0 +1,213 @@
+/* ============================================================
+   GK Tech — service-detail.css
+   Shared styles for ALL individual service pages (services/*.html)
+   ============================================================ */
+
+/* ── Breadcrumb ─────────────────────────────────────────────── */
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+  color: var(--muted); flex-wrap: wrap;
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; transition: color .2s; }
+.breadcrumb a:hover { color: var(--brand); }
+.breadcrumb-sep { color: var(--line); }
+.breadcrumb-current { color: var(--brand); font-weight: 500; }
+
+/* ── Service Hero Badge ─────────────────────────────────────── */
+.service-hero-icon {
+  width: 72px; height: 72px; border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white; margin: 0 auto 1.5rem;
+  box-shadow: 0 16px 40px -10px rgba(98,34,204,0.5);
+}
+
+/* ── Two-Column Section ─────────────────────────────────────── */
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+}
+@media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ── What We Offer Checklist ────────────────────────────────── */
+.offer-list { display: flex; flex-direction: column; gap: 12px; }
+.offer-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 18px; border-radius: 12px;
+  background: var(--surface); border: 1px solid var(--line);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.offer-item:hover {
+  border-color: rgba(98,34,204,0.3);
+  transform: translateX(4px);
+  box-shadow: 0 6px 20px -8px rgba(98,34,204,0.15);
+}
+.offer-check {
+  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+.offer-check svg { width: 11px; height: 11px; color: white; }
+.offer-text { font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+.offer-subtext { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+/* ── Process Timeline ───────────────────────────────────────── */
+.process-track {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .process-track { grid-template-columns: 1fr; gap: 0; }
+}
+.process-step {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; position: relative; padding: 0 8px;
+}
+.process-step::after {
+  content: '';
+  position: absolute; top: 24px; left: 55%;
+  width: 90%; height: 2px;
+  background: linear-gradient(90deg, var(--brand), rgba(98,34,204,0.15));
+}
+.process-step:last-child::after { display: none; }
+@media (max-width: 900px) {
+  .process-step { flex-direction: row; text-align: left; padding: 12px 0; gap: 16px; align-items: flex-start; }
+  .process-step::after {
+    top: 48px; left: 23px; width: 2px; height: 100%;
+    background: linear-gradient(180deg, var(--brand), rgba(98,34,204,0.15));
+  }
+}
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white; font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 18px;
+  box-shadow: 0 8px 20px -6px rgba(98,34,204,0.5);
+  position: relative; z-index: 1;
+}
+.step-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 0.9rem;
+  color: var(--ink); margin-top: 12px;
+}
+@media (max-width: 900px) { .step-title { margin-top: 0; } }
+.step-desc {
+  font-size: 0.78rem; color: var(--muted);
+  margin-top: 6px; line-height: 1.5;
+}
+
+/* ── Tech Pills ─────────────────────────────────────────────── */
+.tech-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.tech-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+  padding: 7px 14px; border-radius: 9999px;
+  background: var(--tint); color: var(--brand);
+  border: 1px solid var(--line);
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+.tech-pill:hover {
+  background: var(--brand); color: white;
+  border-color: var(--brand); transform: translateY(-2px);
+}
+
+/* ── Benefit Cards ──────────────────────────────────────────── */
+.benefit-card {
+  padding: 28px; border-radius: 20px;
+  background: var(--surface); border: 1px solid var(--line);
+  box-shadow: 0 2px 4px rgba(27,24,48,0.04);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  text-align: center;
+}
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(98,34,204,0.2);
+  border-color: rgba(98,34,204,0.25);
+}
+.benefit-emoji { font-size: 36px; line-height: 1; margin-bottom: 12px; }
+.benefit-stat {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem; font-weight: 700; color: var(--brand);
+  line-height: 1;
+}
+.benefit-label {
+  font-size: 0.85rem; color: var(--muted); margin-top: 6px; line-height: 1.4;
+}
+
+/* ── FAQ Accordion ──────────────────────────────────────────── */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item {
+  border: 1px solid var(--line); border-radius: 14px;
+  background: var(--surface); overflow: hidden;
+  transition: border-color .25s, box-shadow .25s;
+}
+.faq-item.open {
+  border-color: rgba(98,34,204,0.3);
+  box-shadow: 0 8px 24px -8px rgba(98,34,204,0.12);
+}
+.faq-q {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 18px 24px; cursor: pointer;
+  background: none; border: none; text-align: left;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem;
+  font-weight: 600; color: var(--ink);
+}
+.faq-q:hover { color: var(--brand); }
+.faq-arrow {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--tint); color: var(--brand);
+  transition: transform .3s, background .2s;
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--brand); color: white; }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s cubic-bezier(0.4,0,0.2,1), padding .3s;
+  padding: 0 24px;
+  font-size: 0.9rem; line-height: 1.7; color: var(--muted);
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 24px 18px; }
+
+/* ── Related Services Cards ─────────────────────────────────── */
+.related-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 20px; border-radius: 14px;
+  background: var(--surface); border: 1px solid var(--line);
+  text-decoration: none; color: var(--ink);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -10px rgba(98,34,204,0.18);
+  border-color: rgba(98,34,204,0.28);
+  color: var(--brand);
+}
+.related-icon {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+}
+.related-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.9rem; }
+.related-arrow { margin-left: auto; opacity: 0.4; font-size: 1.1rem; }
+
+/* ── Service CTA Banner ─────────────────────────────────────── */
+.service-cta-banner {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border-radius: 24px; padding: 3.5rem 2rem;
+  text-align: center; position: relative; overflow: hidden;
+}
+.service-cta-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(4,217,206,0.2), transparent 60%);
+  pointer-events: none;
+}
+.service-cta-banner::after {
+  content: '';
+  position: absolute; bottom: -40px; right: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
