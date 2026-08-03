@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Reviews &amp; Testimonials — GK Tech Software Solution</title>
+  <meta name="description" content="Read verified 5-star client reviews and testimonials from CEOs, CTOs, and MDs about GK Tech's SAP B1, AI, mobile app, and web development services.">
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#6366f1">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:site_name"   content="GK Tech Software Solution">
+  <meta property="og:title"       content="Client Reviews &amp; Testimonials — GK Tech Software Solution">
+  <meta property="og:description" content="Authentic 5-star reviews from CEOs, CFOs, and CTOs working with GK Tech for SAP B1, AI, web, mobile, and cloud software.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://gktechss.io/testimonials.html">
+  <meta property="og:image"       content="https://gktechss.io/assets/images/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Client Reviews &amp; Testimonials — GK Tech Software Solution">
+  <meta name="twitter:description" content="Authentic 5-star reviews from CEOs, CFOs, and CTOs working with GK Tech for SAP B1, AI, web, mobile, and cloud software.">
+  <meta name="twitter:image"       content="https://gktechss.io/assets/images/logo.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .stars { color: #F5A623; letter-spacing: 2px; font-size: 1.1rem; }
+    .testi-avatar {
+      width: 48px; height: 48px; border-radius: 9999px;
+      background: linear-gradient(135deg, var(--brand), var(--cyan));
+      color: white; font-weight: 700; display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<div id="progress" role="progressbar" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     NAV
+     ══════════════════════════════════════════════════════════════ -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 glass">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5 py-1" aria-label="GK Tech Software Solution — Home">
+      <img src="assets/images/logo.png" alt="GK Tech Software Solutions" class="logo-enhance h-9 sm:h-10 w-auto object-contain">
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      
+      <!-- Services Mega-Menu Dropdown -->
+      <div class="nav-dropdown-wrapper">
+        <a href="services.html" class="nav-link flex items-center gap-1">
+          Services
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="mega-dropdown">
+          <div class="mega-grid text-left">
+            <div>
+              <div class="mega-cat-title">💻 Development</div>
+              <div class="space-y-1">
+                <a href="services/web.html" class="mega-item">
+                  <div class="mega-item-icon">🌐</div>
+                  <div>
+                    <div class="mega-item-title">Web Design &amp; Dev</div>
+                    <div class="mega-item-desc">Websites, portals &amp; eCommerce</div>
+                  </div>
+                </a>
+                <a href="services/app.html" class="mega-item">
+                  <div class="mega-item-icon">📱</div>
+                  <div>
+                    <div class="mega-item-title">Mobile App Dev</div>
+                    <div class="mega-item-desc">iOS &amp; Android Flutter apps</div>
+                  </div>
+                </a>
+                <a href="services/software.html" class="mega-item">
+                  <div class="mega-item-icon">⚙️</div>
+                  <div>
+                    <div class="mega-item-title">Software Development</div>
+                    <div class="mega-item-desc">Enterprise software &amp; APIs</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="mega-cat-title">🏢 Enterprise &amp; Cloud</div>
+              <div class="space-y-1">
+                <a href="services/sap.html" class="mega-item">
+                  <div class="mega-item-icon">💼</div>
+                  <div>
+                    <div class="mega-item-title">SAP Consulting &amp; Support</div>
+                    <div class="mega-item-desc">SAP B1 setup, reports &amp; support</div>
+                  </div>
+                </a>
+                <a href="services/cloud.html" class="mega-item">
+                  <div class="mega-item-icon">☁️</div>
+                  <div>
+                    <div class="mega-item-title">Cloud &amp; Infrastructure</div>
+                    <div class="mega-item-desc">AWS/Azure migration &amp; DevOps</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="mega-cat-title">🤖 Emerging Tech</div>
+              <a href="services/ai.html" class="mega-item">
+                <div class="mega-item-icon">🧠</div>
+                <div>
+                  <div class="mega-item-title">AI &amp; Machine Learning</div>
+                  <div class="mega-item-desc">ML models, NLP chatbots &amp; RPA</div>
+                </div>
+              </a>
+            </div>
+            <div>
+              <div class="mega-cat-title">📈 Growth &amp; Marketing</div>
+              <a href="services/social-media.html" class="mega-item">
+                <div class="mega-item-icon">🚀</div>
+                <div>
+                  <div class="mega-item-title">Social Media Marketing</div>
+                  <div class="mega-item-desc">Content, paid ads &amp; brand growth</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="testimonials.html" class="nav-link active">Reviews</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="team.html" class="nav-link">Our Team</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 btn-primary text-white text-sm font-medium px-5 py-2.5 rounded-full">
+        Get a Quote
+      </a>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-[5px] p-2" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
+        <span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu md:hidden" role="navigation" aria-label="Mobile navigation">
+    <nav class="flex flex-col px-6 pb-6 pt-2 text-left">
+      <a href="index.html" class="mobile-link flex items-center gap-3 py-3 border-b" style="border-color:var(--line);" onclick="closeMenu()">
+        <span>🏠</span> <span>Home</span>
+      </a>
+      
+      <!-- Services Collapsible Item -->
+      <div class="border-b" style="border-color:var(--line);">
+        <button 
+          type="button" 
+          onclick="toggleMobileSubmenu(event)" 
+          class="mobile-link w-full flex items-center justify-between py-3 text-left font-medium"
+          aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span>⚡</span> <span>Services</span>
+          </span>
+          <svg id="mobile-sub-chevron" class="w-4 h-4 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Sub-categories Accordion Content (Hidden by default) -->
+        <div id="mobile-services-accordion" class="hidden pl-7 pr-2 pb-3 space-y-3 pt-1">
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-wider text-purple-600 font-bold mb-1">💻 Development</div>
+            <div class="pl-2 space-y-1 text-xs">
+              <a href="services/web.html" class="block py-1 text-slate-700 hover:text-purple-600" onclick="closeMenu()">• Web Design &amp; Dev</a>
+              <a href="services/app.html" class="block py-1 text-slate-700 hover:text-purple-600" onclick="closeMenu()">• Mobile App Dev</a>
+              <a href="services/software.html" class="block py-1 text-slate-700 hover:text-purple-600" onclick="closeMenu()">• Software Development</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-wider text-purple-600 font-bold mb-1">🏢 Enterprise &amp; Cloud</div>
+            <div class="pl-2 space-y-1 text-xs">
+              <a href="services/sap.html" class="block py-1 text-slate-700 hover:text-purple-600" onclick="closeMenu()">• SAP Consulting &amp; Support</a>
+              <a href="services/cloud.html" class="block py-1 text-slate-700 hover:text-purple-600" onclick="closeMenu()">• Cloud &amp; Infrastructure</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-wider text-purple-600 font-bold mb-1">🤖 Emerging Tech</div>
+            <div class="pl-2 space-y-1 text-xs">
+              <a href="services/ai.html" class="block py-1 text-slate-700 hover:text-purple-600" onclick="closeMenu()">• AI &amp; Machine Learning</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-wider text-purple-600 font-bold mb-1">📈 Growth &amp; Marketing</div>
+            <div class="pl-2 space-y-1 text-xs">
+              <a href="services/social-media.html" class="block py-1 text-slate-700 hover:text-purple-600" onclick="closeMenu()">• Social Media Marketing</a>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t" style="border-color:var(--line);">
+            <a href="services.html" class="block text-xs font-semibold text-purple-600 hover:underline" onclick="closeMenu()">View All Services →</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="mobile-link flex items-center gap-3 py-3 border-b" style="border-color:var(--line);" onclick="closeMenu()">
+        <span>ℹ️</span> <span>About</span>
+      </a>
+      <a href="team.html" class="mobile-link flex items-center gap-3 py-3 border-b" style="border-color:var(--line);" onclick="closeMenu()">
+        <span>👥</span> <span>Our Team</span>
+      </a>
+      <a href="careers.html" class="mobile-link flex items-center gap-3 py-3 border-b" style="border-color:var(--line);" onclick="closeMenu()">
+        <span>💼</span> <span>Careers</span>
+      </a>
+      <a href="contact.html" class="btn-primary text-white text-center font-medium px-5 py-3 rounded-full mt-4" onclick="closeMenu()">
+        Get a Quote
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════════════════ -->
+<section class="grad-hero pt-36 pb-16 px-6 lg:px-10">
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto text-center relative">
+    <span class="eyebrow">Client Feedback</span>
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mt-6 leading-tight" style="color:var(--ink);">
+      Trusted by businesses <span class="grad-text">across India &amp; global markets</span>
+    </h1>
+    <p class="mt-6 max-w-2xl mx-auto text-lg leading-relaxed" style="color:var(--muted);">
+      Hear directly from executives, founders, and IT directors who rely on GK Tech for critical software, SAP B1 support, and cloud systems.
+    </p>
+
+    <!-- Stat Bar -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto border-t border-b py-6" style="border-color:var(--line);">
+      <div>
+        <div class="font-display text-3xl font-bold text-purple-600">99.4%</div>
+        <div class="text-xs font-mono mt-1" style="color:var(--muted);">Client Retention Rate</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl font-bold text-purple-600">24/7</div>
+        <div class="text-xs font-mono mt-1" style="color:var(--muted);">SAP SLA Support</div>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <div class="font-display text-3xl font-bold text-purple-600">50+</div>
+        <div class="text-xs font-mono mt-1" style="color:var(--muted);">Enterprise Deployments</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     REVIEWS GRID
+     ══════════════════════════════════════════════════════════════ -->
+<section class="px-6 lg:px-10 py-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Review 1 -->
+      <div class="card reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+            "GK Tech transformed our SAP Business One experience. Their Crystal Layouts and custom SQL query reports slashed our daily reporting overhead by 95%. Their 24/7 support is unmatched."
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t flex items-center gap-3" style="border-color:var(--line);">
+          <div class="testi-avatar">RS</div>
+          <div>
+            <div class="font-display font-bold text-sm" style="color:var(--ink);">Rajesh Singhal</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">MD, Singhal Manufacturing</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="card reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+            "Our React Native cross-platform app was delivered 1 week ahead of schedule and achieved a 4.8★ rating on the App Store. Gautam and Sahil's technical engineering is top-tier."
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t flex items-center gap-3" style="border-color:var(--line);">
+          <div class="testi-avatar">AM</div>
+          <div>
+            <div class="font-display font-bold text-sm" style="color:var(--ink);">Arjun Mehta</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">Founder, FitTrack App</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="card reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+            "The AI inventory forecasting chatbot developed by GK Tech reduced our seasonal stockout losses by 40%. They truly understand AI model deployment at production scale."
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t flex items-center gap-3" style="border-color:var(--line);">
+          <div class="testi-avatar">PN</div>
+          <div>
+            <div class="font-display font-bold text-sm" style="color:var(--ink);">Priya Nair</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">VP Technology, Apex Logistics</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="card reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+            "Our export shipment portal handles millions of rupees in transactions monthly with zero downtime. Clean UI, fast APIs, and full documentation provided."
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t flex items-center gap-3" style="border-color:var(--line);">
+          <div class="testi-avatar">VR</div>
+          <div>
+            <div class="font-display font-bold text-sm" style="color:var(--ink);">Venkatesh Rao</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">Ops Head, Global Textile Exports</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="card reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+            "GK Tech audited our AWS cloud infrastructure and cut our monthly bill by 38% while improving security compliance. Highly recommended for cloud DevOps."
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t flex items-center gap-3" style="border-color:var(--line);">
+          <div class="testi-avatar">VS</div>
+          <div>
+            <div class="font-display font-bold text-sm" style="color:var(--ink);">Vikramaditya Sharma</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">CTO, InsureTech India</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="card reveal rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm leading-relaxed mt-4" style="color:var(--muted);">
+            "SAP B1 batch expiry tracking implementation was completed with zero operational disruption. Khushbu and Vishu's requirement mapping made the transition seamless."
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t flex items-center gap-3" style="border-color:var(--line);">
+          <div class="testi-avatar">SM</div>
+          <div>
+            <div class="font-display font-bold text-sm" style="color:var(--ink);">Sunil Mittal</div>
+            <div class="text-xs font-mono" style="color:var(--muted);">Founder, Mittal Pharma Network</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════════ -->
+<footer class="px-6 lg:px-10 pt-16 pb-8" style="background:var(--ink); color:white;">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="mb-4">
+        <div class="bg-white/95 px-3.5 py-2 rounded-xl inline-block shadow-lg">
+          <img src="assets/images/logo.png" alt="GK Tech Software Solutions" class="logo-enhance h-8 sm:h-9 w-auto object-contain">
+        </div>
+      </div>
+      <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.6);">
+        Building production-grade software, SAP B1 customizations, and scalable AI &amp; cloud systems for ambitious businesses.
+      </p>
+    </div>
+
+    <div>
+      <div class="font-mono text-xs font-semibold uppercase tracking-wider text-purple-400 mb-4">Quick Links</div>
+      <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.7);">
+        <li><a href="index.html" class="hover:text-purple-300">Home</a></li>
+        <li><a href="services.html" class="hover:text-purple-300">Services</a></li>
+        <li><a href="portfolio.html" class="hover:text-purple-300">Portfolio &amp; Case Studies</a></li>
+        <li><a href="testimonials.html" class="hover:text-purple-300">Client Reviews</a></li>
+        <li><a href="about.html" class="hover:text-purple-300">About Us</a></li>
+        <li><a href="team.html" class="hover:text-purple-300">Our Team</a></li>
+        <li><a href="careers.html" class="hover:text-purple-300">Careers</a></li>
+        <li><a href="contact.html" class="hover:text-purple-300">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="font-mono text-xs font-semibold uppercase tracking-wider text-purple-400 mb-4">Services</div>
+      <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.7);">
+        <li><a href="services/ai.html" class="hover:text-purple-300">Artificial Intelligence</a></li>
+        <li><a href="services/web.html" class="hover:text-purple-300">Web Development</a></li>
+        <li><a href="services/app.html" class="hover:text-purple-300">App Development</a></li>
+        <li><a href="services/software.html" class="hover:text-purple-300">Software Development</a></li>
+        <li><a href="services/sap.html" class="hover:text-purple-300">SAP Solutions</a></li>
+        <li><a href="services/cloud.html" class="hover:text-purple-300">Cloud &amp; Infrastructure</a></li>
+        <li><a href="services/social-media.html" class="hover:text-purple-300">Social Media Marketing</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="font-mono text-xs font-semibold uppercase tracking-wider text-purple-400 mb-4">Contact</div>
+      <ul class="space-y-3 text-sm" style="color:rgba(255,255,255,0.7);">
+        <li class="flex gap-2">
+          <span>📍</span>
+          <span>Khanna Residency, Vill. Landhora, Guzur, near Highway Delhi Road, Saharanpur</span>
+        </li>
+        <li class="flex gap-2">
+          <span>📞</span>
+          <a href="tel:+917906080976" class="hover:text-purple-300">+91-7906080976</a>
+        </li>
+        <li class="flex gap-2">
+          <span>✉️</span>
+          <a href="mailto:sapb1.gktechss@gmail.com" class="hover:text-purple-300">sapb1.gktechss@gmail.com</a>
+        </li>
+        <li class="pt-3 border-t flex flex-col gap-2" style="border-color:rgba(255,255,255,0.1);">
+          <a href="privacy.html" class="hover:text-purple-300">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-purple-300">Terms &amp; Conditions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto mt-12 pt-6 border-t flex flex-wrap items-center justify-between gap-4 text-xs font-mono" style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.4);">
+    <span>© <span id="year"></span> GK Tech Software Solution. All rights reserved.</span>
+    <span>Built with ❤️ in India</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
